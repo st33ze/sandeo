@@ -1,3 +1,20 @@
+/* ========== THEME ========== */
+:root {
+  --clr-primary-500: #3A3636;
+  --clr-primary-300: #757272;
+  --clr-accent-500: #0F4C81;
+
+  --ff-primary: 'Raleway', sans-serif;
+  
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-800: 1.5rem;
+}
+
 /* ========== CSS RESET ========== */
 /*
   Josh's Custom CSS Reset
