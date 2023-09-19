@@ -1,8 +1,10 @@
 /* ========== THEME ========== */
 :root {
-  --clr-primary-500: #3A3636;
-  --clr-primary-300: #757272;
-  --clr-accent-500: #0F4C81;
+  --clr-primary-500: 0deg, 4%, 22%;
+  --clr-primary-300: 0deg, 1%, 45%;
+  --clr-accent-500: 208deg, 79%, 28%;
+  --clr-accent-25: 210deg, 33%, 96%;
+  --clr-secondary: 0deg, 0%, 100%;
 
   --ff-primary: 'Raleway', sans-serif;
   
@@ -42,4 +44,19 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 #root, #__next {
   isolation: isolate;
+}
+
+/* ========== UTILITY CLASSES ========== */
+.material-symbols-rounded {
+	font-family: "Material Symbols Rounded Variable";
+  font-weight: 200;
+	font-style: normal;
+	font-size: 24px; /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
 }
