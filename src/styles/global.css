@@ -46,6 +46,14 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+/* ========== GENERAL STYLING ========== */
+body {
+  font-size: var(--fs-400);
+  font-family: var(--ff-primary);
+  font-variant-numeric: lining-nums;
+  color: var(--clr-primary-500);
+}
+
 /* ========== UTILITY CLASSES ========== */
 .material-symbols-rounded {
 	font-family: "Material Symbols Rounded Variable";
@@ -59,4 +67,13 @@ p, h1, h2, h3, h4, h5, h6 {
 	word-wrap: normal;
 	white-space: nowrap;
 	direction: ltr;
+}
+.animation-off {
+  transition: none !important;
+}
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+  max-width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
 }

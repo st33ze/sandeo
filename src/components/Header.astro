@@ -1,13 +1,15 @@
 ---
 import {Image} from "astro:assets";
 import logo from "../assets/logo.svg";
+import Hamburger from "./Hamburger.astro";
 ---
 
 <header>
   <div class="container nav-wrapper">
     <a href="/"><Image src={logo} alt="sandeo logo"/></a>
+    <Hamburger controls="primary-nav"></Hamburger>
     <nav>
-      <ul id="primary-nav" class="primary-nav" role="list">
+      <ul id="primary-nav" class="primary-nav" role="list" data-visible="false">
         <li><a href="#">o nas</a></li>
         <li class="has-submenu">
           <a href="#">oferta</a>
@@ -42,15 +44,12 @@ import logo from "../assets/logo.svg";
   header {
     position: fixed;
     inset: 0 0 auto 0;
-    /* background: hsl(var(--clr-secondary)); */
-    font-family: var(--ff-primary);  /*move*/
-    font-variant-numeric: lining-nums; /*move*/
+    margin-top: 2rem;
   }
   .nav-wrapper {
+    position:relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 2rem 1rem;
   }
   .primary-nav {
     position: absolute;
@@ -60,11 +59,16 @@ import logo from "../assets/logo.svg";
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 0.5rem 1rem;
+    padding: 2rem 1rem;
     text-transform: uppercase;
     font-size: var(--fs-800);
     font-weight: var(--fw-bold);
     z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+  }
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0);
   }
   ul {
     list-style: none;
@@ -72,7 +76,6 @@ import logo from "../assets/logo.svg";
   a {
     text-decoration: none;
     color: hsl(var(--clr-primary-300));
-    display: block;
   }
   .submenu {
     height: 0;
@@ -98,14 +101,14 @@ import logo from "../assets/logo.svg";
 /* ========== MEDIA QUERIES ========== */
 @media (min-width: 780px) {
   .nav-wrapper {
-    gap: 2em;
     align-items: end;
   }
   .primary-nav {
     position: relative;
     flex-direction: row;
-    transform: none;
+    transform: translateX(0);
     padding: 0;
+    margin-left: 2rem;
   }
   .primary-nav a {
     position: relative;
@@ -167,16 +170,27 @@ import logo from "../assets/logo.svg";
 
 <script>
   // Submenu expand.
-  const navLink = document.querySelector(".has-submenu > a");
-  if (navLink) {
-    navLink.addEventListener("click", () => {
-      const submenu = navLink.nextSibling as HTMLElement;
-      if (submenu && window.innerWidth < 780) {
-        const submenuHeight = window.getComputedStyle(submenu).getPropertyValue("height");
-        if (parseFloat(submenuHeight) === 0) 
-          submenu.style.height = submenu.scrollHeight + "px";
-        else submenu.style.height = "0px";
-      }
-    });
-  }
+  const navLink = document.querySelector(".has-submenu > a")!;
+  const submenu = navLink.nextSibling! as HTMLElement;
+  navLink.addEventListener("click", () => {
+    if (window.innerWidth < 780) {
+      const submenuHeight = window.getComputedStyle(submenu).getPropertyValue("height");
+      if (parseFloat(submenuHeight) === 0) 
+        submenu.style.height = `${submenu.scrollHeight}px`;
+      else submenu.style.height = "0px";
+    }
+  });
+  // Turn off nav animation when window resize.
+  window.addEventListener("resize", () => {
+    const nav = document.getElementById("primary-nav")!;
+    nav.classList.add("animation-off");
+  })
+  // Update submenu height when window resize.
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 780) {
+      const submenuHeight = window.getComputedStyle(submenu).getPropertyValue("height");
+      if (parseFloat(submenuHeight) !== 0) 
+        submenu.style.height = 'auto';
+    }
+  });
 </script>

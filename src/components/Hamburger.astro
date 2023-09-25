@@ -1,0 +1,94 @@
+---
+interface Props {
+  controls: string;
+}
+const {controls} = Astro.props
+---
+
+<button-burger>
+  <button aria-label="Menu" aria-controls={controls} aria-expanded="false">
+    <div>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+</button-burger>
+
+<style>
+  button {
+    position: absolute;
+    right: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: start;
+    background-color: transparent;
+    border: none;
+  }
+  div {
+    width: 32px;
+    height: 24px;
+    position: relative;
+  }
+  span {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: hsl(var(--clr-primary-300));
+    border-radius: 2px;
+  }
+  span:nth-child(2) {
+    top: 10px;
+    opacity: 1;
+    transition: width 0.5s ease, opacity 0.5s ease;
+  }
+  span:last-child {
+    top: 20px;
+  }
+  span:first-child,
+  span:last-child {
+    transition: transform 0.5s ease;
+  }
+  .closed span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+  .closed span:first-child {
+    transform: rotate(135deg) translate(7px, -7px);
+  }
+  .closed span:last-child {
+    transform: rotate(-135deg) translate(7px, 7px);
+  }
+  @media (min-width: 780px) {
+    button {
+      display: none;
+    }
+  }
+</style>
+<script>
+  class Hamburger extends HTMLElement {
+    constructor() {
+      super();
+
+      const button = this.querySelector('button')!;
+      const controlID = button.getAttribute("aria-controls")!;
+      const controlledElement = document.getElementById(controlID);
+      if (controlledElement) {
+        button.addEventListener("click", () => {
+          let visible = controlledElement.getAttribute("data-visible");
+          controlledElement.classList.remove("animation-off");
+          if (visible === "false") {
+            button.classList.add("closed");
+            button.setAttribute("aria-expanded", "true");
+            controlledElement.setAttribute("data-visible", "true");
+          } else if (visible === "true") {
+            button.classList.remove("closed");
+            button.setAttribute("aria-expanded", "false");
+            controlledElement.setAttribute("data-visible", "false");
+          }
+        })
+      }
+    }
+  }
+  customElements.define("button-burger", Hamburger);
+</script>
