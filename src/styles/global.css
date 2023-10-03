@@ -6,15 +6,18 @@
   --clr-accent-25: 210deg, 33%, 96%;
   --clr-secondary: 0deg, 0%, 100%;
 
-  --ff-primary: 'Raleway', sans-serif;
+  --ff-primary: 'Raleway Variable', sans-serif;
   
   --fw-light: 300;
   --fw-regular: 400;
+  --fw-medium: 500;
   --fw-bold: 600;
 
   --fs-400: 1rem;
   --fs-500: 1.125rem;
   --fs-800: 1.5rem;
+
+  --inline-margin-sm: 0.75rem;
 }
 
 /* ========== CSS RESET ========== */
@@ -72,8 +75,14 @@ body {
   transition: none !important;
 }
 .container {
-  --max-width: 1110px;
-  --padding: 1rem;
-  max-width: min(var(--max-width), 100% - var(--padding) * 2);
-  margin-inline: auto;
+  margin-inline: var(--inline-margin-sm);
+}
+
+@media (min-width: 780px) {
+  .container {
+    --max-width: 1110px;
+    --padding: 1rem;
+    max-width: min(var(--max-width), 100% - var(--padding) * 2);
+    margin-inline: auto;
+  }
 }

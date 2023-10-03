@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@fontsource-variable/material-symbols-rounded": "^5.0.11",
-    "@fontsource/raleway": "^5.0.8",
+    "@fontsource-variable/raleway": "^5.0.9",
     "astro": "^3.0.7"
   }
 }

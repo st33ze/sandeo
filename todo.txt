@@ -1,0 +1,4 @@
+HEADER
+- smaller logo on small screens ?
+- offer expand/collapse icon
+- shadow on header and nav
