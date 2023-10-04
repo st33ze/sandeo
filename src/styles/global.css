@@ -2,7 +2,10 @@
 :root {
   --clr-primary-500: 0deg, 4%, 22%;
   --clr-primary-300: 0deg, 1%, 45%;
+  --clr-accent-900: 208deg, 78%, 14%;
   --clr-accent-500: 208deg, 79%, 28%;
+  --clr-accent-300: 207deg, 31%, 57%;
+  --clr-accent-100: 209deg, 32%, 86%;
   --clr-accent-25: 210deg, 33%, 96%;
   --clr-secondary: 0deg, 0%, 100%;
 

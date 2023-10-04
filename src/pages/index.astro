@@ -6,7 +6,7 @@ import heroBg from "../assets/hero-background.jpg";
 
 <Layout title="Sandeo">
 	<main>
-		<section class="bg-left-extend">
+		<section>
 			<div class="hero container">
 				<div class="hero-content">
 					<h1>Kancelaria finansowo - księgowa</h1>
@@ -17,6 +17,25 @@ import heroBg from "../assets/hero-background.jpg";
 					<Image src={heroBg} alt="" width="500"/>
 				</div>
 			</div>
+		</section>
+		<section class="more-about" aria-label="Więcej o nas">
+			<div class="more-about-content container">
+				<div>
+					<h2>Doświadczenie</h2>
+					<p>Posiadamy wieloletnie doświadczenie w obszarze rachunkowości i finansów, dzięki czemu możesz polegać na naszej wiedzy i profesjonalizmie.</p>
+				</div>
+				<div>
+					<h2>Nowoczesne rozwiązania</h2>
+					<p>Digitalizacja, automatyzacja procesów, oraz generowanie i rejestracja elektronicznych sprawozdań finansowych.</p>
+				</div>
+				<div>
+					<h2>Spersonalizowane usługi</h2>
+					<p>Dostosowujemy nasze usługi do indywidualnych potrzeb każdego klienta, zapewniając efektywne i skrojone na miarę rozwiązania.</p>
+				</div>
+			</div>
+		</section>
+		<section class="offer">
+			<h2>czym się zajmujemy</h2>
 		</section>
 	</main>
 </Layout>
@@ -36,7 +55,7 @@ import heroBg from "../assets/hero-background.jpg";
 		line-height: 1.8rem;
 		font-weight: var(--fw-medium);
 	}
-	p {
+	.hero-content p {
 		margin-top: 0.5rem;
 		color: hsl(var(--clr-primary-300));
 	}
@@ -71,22 +90,64 @@ import heroBg from "../assets/hero-background.jpg";
 		width: 100%;
 		object-fit: cover;
 	}
+	.more-about {
+		background-color: hsl(var(--clr-accent-900));
+	}
+	.more-about-content {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding-block: 2rem;
+		text-align: center;
+	}
+	.more-about-content div {
+		position: relative;
+	}
+	.more-about-content div:not(:last-child)::after {
+		content: "";
+		position: absolute;
+		bottom: -1rem;
+		left: 25%;
+		height: 1px;
+		width: 50%;
+		background-color: hsl(var(--clr-accent-500), 0.5);
+	}
+	.more-about h2 {
+		color: hsl(var(--clr-accent-300));
+		font-size: var(--fs-500);
+	}
+	.more-about p {
+		font-size: var(--fs-400);
+		color: hsl(var(--clr-accent-100));
+	}
 	@media (min-width: 780px) {
+		section:has(.hero) {
+			padding-block: min(6rem, 10vh) min(12rem, 20vh);
+		}
 		.bg-left-extend {
 			background: linear-gradient(to right, hsl(var(--clr-accent-25), 1) 50%, hsl(var(--clr-accent-25), 0) 50%);
 		}
 		.hero {
+			position: relative;
 			display: flex;
-			margin-top: clamp(10rem, 20vh, 15rem);
 			margin-inline: auto;
 			text-align: left;
+		}
+		.hero::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -80%;
+			width: 80%;
+			height: 100%;
+			background: inherit;
 		}
 		.hero-content {
 			display: flex;
 			flex-direction: column;
 			gap: 0.25rem;
 			max-width: 60%;
-			padding: clamp(2rem, 8vh, 8rem) 0;
+			padding: clamp(2rem, 10vh, 6rem) 0;
 			font-size: var(--fs-500);
 		}
 		.hero-content a {
@@ -102,6 +163,17 @@ import heroBg from "../assets/hero-background.jpg";
 		.hero-bg::after {
 			background: linear-gradient(to right, hsl(var(--clr-accent-25), 1), hsl(var(--clr-accent-25), 0.2) 50%);
 		}
+		.more-about-content {
+		flex-direction: row;
+		text-align: left;
+		}
+		.more-about-content div:not(:last-child)::after {
+			height: 100%;
+			width: 1px;
+			left: calc(100% + 1rem);
+			bottom: 0;
+		}
 	}
+
 </style>
 
