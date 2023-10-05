@@ -1,7 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import OfferCard from '../components/OfferCard.astro';
 import { Image } from 'astro:assets';
 import heroBg from "../assets/hero-background.jpg";
+import { getCollection } from 'astro:content';
+
+const offers = await getCollection('offer');
 ---
 
 <Layout title="Sandeo">
@@ -34,11 +38,17 @@ import heroBg from "../assets/hero-background.jpg";
 				</div>
 			</div>
 		</section>
-		<section class="offer">
+		<section class="offer container">
 			<h2>czym się zajmujemy</h2>
+			<div class="offer-items">
+				{offers.map(offer => (
+					<OfferCard data={offer.data}></OfferCard>
+				))}
+			</div>
 		</section>
 	</main>
 </Layout>
+
 <style>
 	main {
 		margin-top: 8rem;
@@ -63,7 +73,7 @@ import heroBg from "../assets/hero-background.jpg";
 		margin-top: 2rem;
 		color: hsl(var(--clr-accent-500));
 		background-color: hsl(var(--clr-accent-25));
-		font-size: var(--fs-800);
+		font-size: var(--fs-600);
 		font-weight: var(--fw-bold);
 		padding: 0.5rem 2rem;
 		border: 2px solid hsl(var(--clr-accent-500), 0.5);
@@ -114,11 +124,34 @@ import heroBg from "../assets/hero-background.jpg";
 	}
 	.more-about h2 {
 		color: hsl(var(--clr-accent-300));
-		font-size: var(--fs-500);
+		font-size: var(--fs-450);
 	}
 	.more-about p {
 		font-size: var(--fs-400);
 		color: hsl(var(--clr-accent-100));
+	}
+	.offer {
+		margin-block: 4rem;
+	}
+	.offer h2 {
+		position: relative;
+		font-size: var(--fs-600);
+		margin-bottom: 2rem;
+		margin-left: calc(min(10vw, 4rem) + 0.5rem);
+	}
+	.offer h2::before {
+		content: "";
+		position: absolute;
+		right: calc(100% + 0.5rem);
+		top: 50%;
+		width: min(10vw, 4rem);
+		height: 5px;
+		background-color: hsl(var(--clr-accent-500));
+		border-radius: 4px;
+	}
+	.offer-items {
+		display: grid;
+		gap: 1rem;
 	}
 	@media (min-width: 780px) {
 		section:has(.hero) {
@@ -148,13 +181,13 @@ import heroBg from "../assets/hero-background.jpg";
 			gap: 0.25rem;
 			max-width: 60%;
 			padding: clamp(2rem, 10vh, 6rem) 0;
-			font-size: var(--fs-500);
+			font-size: var(--fs-450);
 		}
 		.hero-content a {
 			align-self: center;
 		}
 		h1 {
-			font-size: min(calc(var(--fs-800) + 1vw), 2.5rem);
+			font-size: var(--fs-800);
 		}
 		.hero-bg img {
 			height: 100%;
@@ -173,7 +206,12 @@ import heroBg from "../assets/hero-background.jpg";
 			left: calc(100% + 1rem);
 			bottom: 0;
 		}
+		.offer h2 {
+			font-size: var(--fs-800);
+		}
+		.offer-items {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
-
 </style>
 

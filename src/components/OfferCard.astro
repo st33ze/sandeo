@@ -1,0 +1,44 @@
+---
+const {data} = Astro.props;
+---
+
+<a href="" class="card">
+  <span aria-hidden="true" class="material-symbols-rounded">{data.icon}</span>
+  <h3>{data.title}</h3>
+  <ul>
+    {data.recap.map((item: string) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+</a>
+
+<style>
+  .card {
+    display: grid;
+    grid-template-columns: min-content;
+    grid-template-rows: min-content;
+    grid-template-areas: 
+    "icon title"
+    "icon content";
+    padding: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid hsl(var(--clr-primary-300), 0.25);
+    box-shadow: 5px 5px 5px hsl(var(--clr-primary-300), 0.25);
+    border-radius: 8px;
+    background-color: hsl(var(--clr-accent-25));
+  }
+  .card:hover {
+    border: 1px solid hsl(var(--clr-primary-300), 0.75);
+  }
+  .card span {
+    grid-area: icon;
+    padding-right: 0.5rem;
+    font-size: 48px;
+  }
+  .card ul {
+    padding-left: 20px;
+    list-style-type: square;
+    color: hsl(var(--clr-primary-300));
+  }
+</style>
