@@ -1,0 +1,86 @@
+---
+---
+
+<footer>
+  <div class="contact container">
+    <h2>Zapraszamy do kontaktu</h2>
+    <ul>
+      <li>
+        <a class="contact-item" href="tel:+48691324334" target="_blank">
+          <span aria-hidden="true" class="material-symbols-rounded">smartphone</span>
+          <p>
+            <span>Telefon</span>
+            <span>+48 691 324 334</span>
+          </p>
+        </a>
+      </li>
+      <li>
+        <a class="contact-item" href="mailto:biuro@sandeo.pl" target="_blank">
+          <span aria-hidden="true" class="material-symbols-rounded">mail</span>
+          <p>
+            <span>Adres email</span>
+            <span>biuro@sandeo.pl</span>
+          </p>
+        </a>
+      </li>
+      <li class="contact-item">
+          <span aria-hidden="true" class="material-symbols-rounded">schedule</span>
+          <p>
+            <span>Godziny otwarcia biura</span>
+            <span>Poniedziałek - piątek, godz. 8.00-16.00</span>
+          </p>
+      </li>
+      <li>
+        <a class="contact-item" href="https://maps.app.goo.gl/3P2wtVcw2LLvZQk78" target="_blank">
+          <span aria-hidden="true" class="material-symbols-rounded">location_on</span>
+          <p>
+            <span>Adres biura</span>
+            <span>Poznań 61-701, ul. Fredry 7, 6-7</span></p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: hsl(var(--clr-accent-900));
+  }
+  .contact {
+    padding-block: 2rem;
+    color: hsl(var(--clr-accent-100));
+  }
+  .contact h2 {
+    text-transform: uppercase;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .contact-item > span {
+    font-size: 32px;
+  }
+  .contact-item p {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2rem;
+  }
+  .contact-item p span:first-child {
+    color: hsl(var(--clr-accent-300));
+  }
+  .contact-item p span:last-child {
+    font-size: var(--fs-450);
+  }
+</style>
