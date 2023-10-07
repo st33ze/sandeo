@@ -1,6 +1,7 @@
 ---
 title: Doradztwo podatkowe i gospodarcze
 icon: chat
+headerBg: ./doradztwo.jpg
 recap:
 - Szczegółowa analiza skutków podatkowych i realizacji zdarzeń gospodarczych
 - Identyfikacja ryzyka podatkowego i związanego z nim zagrożenia
@@ -11,7 +12,7 @@ kompleksowe usługi obejmujące zarządzanie ryzykiem podatkowym oraz optymaliza
 Mamy świadomość, iż szczegółowa analiza przewidywanych skutków podatkowych realizacji
 określonych zdarzeń gospodarczych pozwala na identyﬁkację ryzyka podatkowego i innych związanych
 z nim zagrożeń. Naszym celem jest efektywne poszukiwanie optymalnych, bezpiecznych i legalnych
-rozwiązań podatkowych zarówno dla ﬁrm jak i osób prywatnych.
+rozwiązań podatkowych zarówno dla ﬁrm jak i osób prywatnych.  
 Oferujemy wsparcie w zakresie:
 
 - Bieżącego doradztwa oraz pomoc prawno - podatkowa w ramach podatku PIT, CIT i VAT

@@ -1,4 +1,6 @@
 ---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -12,5 +14,94 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<h2>{entry.data.title}</h2>
-<Content />
+<Layout title={`Sandeo - ${entry.data.title}`}>
+  <main>
+    <section class="container">
+      <div class="offer-header">
+        <h1>{entry.data.title}</h1>
+        <div class="offer-header--bg">
+          <Image src={entry.data.headerBg} alt="" width="1000"/>
+        </div>
+      </div>
+      <div class="content"><Content/></div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  section {
+    margin: 0;
+  }
+  .offer-header {
+    position: relative;
+    padding-block: 4rem;
+  }
+  .offer-header h1 {
+    padding-inline: 1rem;
+    letter-spacing: 0.15rem;
+    text-align: center;
+    color: hsl(var(--clr-accent-25));
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .offer-header--bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .offer-header--bg::after {
+    content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+    background-color: hsl(var(--clr-accent-900), 0.8);
+  }
+  .offer-header--bg img {
+    height: 100%;
+    /* width: 100%; */
+    object-fit: cover;
+  }
+  .content {
+    margin-block: 2rem;
+    font-size: var(--fs-450);
+    line-height: 2rem;
+    margin-inline: var(--inline-margin-sm);
+  }
+  .content :global(ul) {
+    list-style-type: square;
+  }
+  .content :global(p:not(:last-child)) {
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 780px) {
+    section {
+      display: flex;
+      flex-direction: column;
+      margin-inline: auto;
+    }
+    .offer-header {
+      width: 70%;
+      align-self: end;
+      padding-block: 6rem;
+    }
+    .offer-header h1 {
+      padding-right: 4rem;
+      padding-inline: 2rem;
+      font-size: var(--fs-800);
+      text-align: end;
+    }
+    .offer-header--bg::after {
+      border-bottom-left-radius: 250px;
+    }
+    .offer-header--bg img {
+      border-bottom-left-radius: 250px;
+    }
+    .content {
+      margin-block: 6rem;
+    }
+  }
+</style>

@@ -1,15 +1,13 @@
 ---
 title: Rejestracja firmy i postępowanie likwidacyjne
 icon: edit_square
+headerBg: ./rejestracja-firmy.jpg
 recap:
 - Rejestracja firmy i wybór optymalnej formy prawnej
 - Doradztwo w przygotowaniu dokumentów
 - Postępowanie likwidacyjne
 ---
-Założenie spółki jest skomplikowanym procesem do którego potrzebna jest fachowa wiedza.
-Wychodząc naprzeciw oczekiwaniom naszych Klientów, którzy zamierzają rozpocząć lub poszerzyć
-swoją działalność Kancelaria SANDEO oferuje wsparcie przy wyborze właściwej formy prawnej dla
-nowego przedsięwzięcia.
+Założenie spółki jest skomplikowanym procesem do którego potrzebna jest fachowa wiedza. Wychodząc naprzeciw oczekiwaniom naszych Klientów, którzy zamierzają rozpocząć lub poszerzyć swoją działalność Kancelaria SANDEO oferuje wsparcie przy wyborze właściwej formy prawnej dla nowego przedsięwzięcia.  
 Nasze usługi obejmują:
 
 - Pomoc w zakresie rejestracji ﬁrmy i wybór optymalnej formy prawnej
