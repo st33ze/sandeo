@@ -9,7 +9,6 @@ export async function getStaticPaths() {
     params: {slug: entry.slug}, props: {entry},
   }));
 }
-
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
@@ -95,10 +94,10 @@ const { Content } = await entry.render();
       text-align: end;
     }
     .offer-header--bg::after {
-      border-bottom-left-radius: 250px;
+      border-bottom-left-radius: 100px;
     }
     .offer-header--bg img {
-      border-bottom-left-radius: 250px;
+      border-bottom-left-radius: 100px;
     }
     .content {
       margin-block: 6rem;

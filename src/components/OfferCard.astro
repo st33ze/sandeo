@@ -1,8 +1,8 @@
 ---
-const {data} = Astro.props;
+const {data, url } = Astro.props;
 ---
 
-<a href="" class="card">
+<a href={url} class="card">
   <span aria-hidden="true" class="material-symbols-rounded">{data.icon}</span>
   <h3>{data.title}</h3>
   <ul>

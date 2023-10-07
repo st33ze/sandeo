@@ -10,12 +10,12 @@ const offers = await getCollection('offer');
 
 <Layout title="Sandeo">
 	<main>
-		<section>
+		<section id="about">
 			<div class="hero container">
 				<div class="hero-content">
 					<h1>Kancelaria finansowo - księgowa</h1>
 					<p>Jesteśmy zespołem doświadczonych specjalistów, gotowych pomóc Ci w osiągnięciu sukcesu biznesowego. Nasza oferta obejmuje kompleksowe usługi rachunkowe, podatkowe oraz doradztwo finansowe, które pozwalają Ci skupić się na rozwoju swojej działalności.</p>
-					<a href=""><button>oferta</button></a>
+					<a href="#offer"><button>oferta</button></a>
 				</div>
 				<div class="hero-bg" role="presentation">
 					<Image src={heroBg} alt="" width="500"/>
@@ -38,11 +38,11 @@ const offers = await getCollection('offer');
 				</div>
 			</div>
 		</section>
-		<section class="offer container">
+		<section id="offer" class="offer container">
 			<h2>czym się zajmujemy</h2>
 			<div class="offer-items">
 				{offers.map(offer => (
-					<OfferCard data={offer.data}></OfferCard>
+					<OfferCard data={offer.data} url={`/oferta/${offer.slug}`}></OfferCard>
 				))}
 			</div>
 		</section>
