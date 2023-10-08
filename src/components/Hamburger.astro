@@ -82,10 +82,12 @@ const {controls} = Astro.props
             button.classList.add("closed");
             button.setAttribute("aria-expanded", "true");
             controlledElement.setAttribute("data-visible", "true");
+            document.body.style.overflow = "hidden";
           } else if (visible === "true") {
             button.classList.remove("closed");
             button.setAttribute("aria-expanded", "false");
             controlledElement.setAttribute("data-visible", "false");
+            document.body.style.overflow = "auto";
           }
         })
       }
