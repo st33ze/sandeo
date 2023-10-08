@@ -175,8 +175,10 @@ import Hamburger from "./Hamburger.astro";
   // Submenu expand.
   const navLink = document.querySelector(".has-submenu > a")!;
   const submenu = navLink.nextSibling! as HTMLElement;
-  navLink.addEventListener("click", () => {
+  navLink.addEventListener("click", (e) => {
+    
     if (window.innerWidth < 780) {
+      e.preventDefault();
       const submenuHeight = window.getComputedStyle(submenu).getPropertyValue("height");
       if (parseFloat(submenuHeight) === 0) 
         submenu.style.height = `${submenu.scrollHeight}px`;
