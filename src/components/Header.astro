@@ -194,7 +194,7 @@ import Hamburger from "./Hamburger.astro";
 <script>
   // Submenu expand.
   const navLink = document.querySelector(".has-submenu > a")!;
-  const navLinkIcon = navLink.querySelector(".material-symbols-rounded");
+  const navLinkIcon = navLink.querySelector(".material-symbols-rounded")!;
   const submenu = navLink.nextSibling! as HTMLElement;
   navLink.addEventListener("click", (e) => {
     if (window.innerWidth < 780) {
@@ -203,7 +203,7 @@ import Hamburger from "./Hamburger.astro";
       if (parseFloat(submenuHeight) === 0) 
         submenu.style.height = `${submenu.scrollHeight}px`;
       else submenu.style.height = "0px";
-      navLinkIcon?.classList.toggle("rotate");
+      navLinkIcon.classList.toggle("rotate");
     }
   });
   // Turn off nav animation when window resize.
