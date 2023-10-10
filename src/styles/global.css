@@ -64,9 +64,6 @@ body {
   font-variant-numeric: lining-nums;
   color: var(--clr-primary-500);
 }
-main {
-  margin-top: 8rem;
-}
 
 /* ========== UTILITY CLASSES ========== */
 .material-symbols-rounded {

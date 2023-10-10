@@ -14,17 +14,15 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={`Sandeo - ${entry.data.title}`}>
-  <main>
-    <section class="container">
-      <div class="offer-header">
-        <h1>{entry.data.title}</h1>
-        <div class="offer-header--bg">
-          <Image src={entry.data.headerBg} alt="" width="1000"/>
-        </div>
+  <section class="container">
+    <div class="offer-header">
+      <h1>{entry.data.title}</h1>
+      <div class="offer-header--bg">
+        <Image src={entry.data.headerBg} alt="" width="1000"/>
       </div>
-      <div class="content"><Content/></div>
-    </section>
-  </main>
+    </div>
+    <div class="content"><Content/></div>
+  </section>
 </Layout>
 
 <style>

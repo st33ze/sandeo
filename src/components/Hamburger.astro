@@ -1,12 +1,13 @@
 ---
 interface Props {
   controls: string;
+  overlay: string;
 }
-const {controls} = Astro.props
+const {controls, overlay} = Astro.props
 ---
 
 <button-burger>
-  <button aria-label="Menu" aria-controls={controls} aria-expanded="false">
+  <button aria-label="Menu" aria-controls={controls} aria-expanded="false" data-overlay={overlay}>
     <div>
       <span></span>
       <span></span>
@@ -68,29 +69,52 @@ const {controls} = Astro.props
 
 <script>
   class Hamburger extends HTMLElement {
+    button: HTMLElement;
+    controlledElement: HTMLElement;
+    overlay: HTMLElement;
+
     constructor() {
       super();
 
-      const button = this.querySelector('button')!;
-      const controlID = button.getAttribute("aria-controls")!;
-      const controlledElement = document.getElementById(controlID);
-      if (controlledElement) {
-        button.addEventListener("click", () => {
-          let visible = controlledElement.getAttribute("data-visible");
-          controlledElement.classList.remove("animation-off");
-          if (visible === "false") {
-            button.classList.add("closed");
-            button.setAttribute("aria-expanded", "true");
-            controlledElement.setAttribute("data-visible", "true");
-            document.body.style.overflow = "hidden";
-          } else if (visible === "true") {
-            button.classList.remove("closed");
-            button.setAttribute("aria-expanded", "false");
-            controlledElement.setAttribute("data-visible", "false");
-            document.body.style.overflow = "auto";
-          }
-        })
-      }
+      this.button = this.querySelector('button')!;
+      const controlID = this.button.getAttribute("aria-controls")!;
+      this.controlledElement = document.getElementById(controlID)!;
+      const overlayName = this.button.getAttribute("data-overlay")!;
+      this.overlay = document.querySelector(`.${overlayName}`)!;
+      
+      this.button.addEventListener("click", () => {
+        this.controlledElement.classList.remove("animation-off");
+        const visible = this.controlledElement.getAttribute("data-visible");
+        if (visible === "false") this.open();
+        else if (visible === "true") this.close();
+      });
+
+      // Close menu when clicked on menu item without submenu.
+      const noSubmenuLinks = this.controlledElement.querySelectorAll(":scope > li:not(.has-submenu)");
+      noSubmenuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          if(window.innerWidth < 780) this.close();
+        });
+      });
+
+      // Close menu when clicked on overlay.
+      this.overlay.addEventListener("click", () => this.close());
+    }
+
+    open(): void {
+      this.button.classList.add("closed");
+      this.button.setAttribute("aria-expanded", "true");
+      this.controlledElement.setAttribute("data-visible", "true");
+      this.overlay.classList.add("overlay-visible");
+      document.body.style.overflow = "hidden";
+    }
+    
+    close(): void {
+      this.button.classList.remove("closed");
+      this.button.setAttribute("aria-expanded", "false");
+      this.controlledElement.setAttribute("data-visible", "false");
+      this.overlay.classList.remove("overlay-visible");
+      document.body.style.overflow = "auto";
     }
   }
   customElements.define("button-burger", Hamburger);
