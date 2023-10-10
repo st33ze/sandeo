@@ -12,7 +12,10 @@ import Hamburger from "./Hamburger.astro";
       <ul id="primary-nav" class="primary-nav" role="list" data-visible="false">
         <li><a href="/#about">o nas</a></li>
         <li class="has-submenu">
-          <a href="/#offer">oferta</a>
+          <a href="/#offer">
+            <span>oferta</span>
+            <span class="material-symbols-rounded">expand_more</span>
+          </a>
           <div class="submenu">
             <ul role="list">
               <li><a href="/oferta/outsourcing">Outsourcing księgowości</a></li>
@@ -72,6 +75,20 @@ import Hamburger from "./Hamburger.astro";
   .primary-nav[data-visible="true"] {
     transform: translateX(0);
   }
+  .primary-nav .has-submenu a {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+  .primary-nav .material-symbols-rounded {
+    font-size: 36px;
+    font-weight: 400;
+    transform: rotateX(0);
+    transition: transform 0.5s ease-in-out;
+  }
+  .primary-nav .rotate {
+    transform: rotateX(180deg);
+  }
   ul {
     list-style: none;
   }
@@ -112,6 +129,9 @@ import Hamburger from "./Hamburger.astro";
     transform: translateX(0);
     padding: 0;
     margin-left: 2rem;
+  }
+  .primary-nav .material-symbols-rounded {
+    display: none;
   }
   .primary-nav a {
     position: relative;
@@ -174,6 +194,7 @@ import Hamburger from "./Hamburger.astro";
 <script>
   // Submenu expand.
   const navLink = document.querySelector(".has-submenu > a")!;
+  const navLinkIcon = navLink.querySelector(".material-symbols-rounded");
   const submenu = navLink.nextSibling! as HTMLElement;
   navLink.addEventListener("click", (e) => {
     if (window.innerWidth < 780) {
@@ -182,6 +203,7 @@ import Hamburger from "./Hamburger.astro";
       if (parseFloat(submenuHeight) === 0) 
         submenu.style.height = `${submenu.scrollHeight}px`;
       else submenu.style.height = "0px";
+      navLinkIcon?.classList.toggle("rotate");
     }
   });
   // Turn off nav animation when window resize.
