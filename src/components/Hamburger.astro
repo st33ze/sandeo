@@ -99,6 +99,12 @@ const {controls, overlay} = Astro.props
 
       // Close menu when clicked on overlay.
       this.overlay.addEventListener("click", () => this.close());
+
+      // Close menu on resize.
+      window.addEventListener("resize", () => {
+        const visible = this.controlledElement.getAttribute("data-visible");
+        if (window.innerWidth > 780 && visible === "true") this.close();
+      });
     }
 
     open(): void {
