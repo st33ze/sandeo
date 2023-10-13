@@ -1,7 +1,5 @@
 FOOTER
-- fix links
 - add map?
-- remove target blank from links
 
 GENERAL
 - lower images dimension
