@@ -160,6 +160,13 @@ const offers = await getCollection('offer');
 			display: flex;
 			margin-inline: auto;
 			text-align: left;
+			transform: translateX(-100px);
+			opacity: 0;
+			transition: transform 0.25s ease-in, opacity 0.5s ease-out;
+		}
+		.hero-loaded {
+			transform: translateX(0);
+			opacity: 1;
 		}
 		.hero::before {
 			content: "";
@@ -209,5 +216,22 @@ const offers = await getCollection('offer');
 			row-gap: 2rem;
 		}
 	}
+	.hero {
+
+	}
 </style>
+
+<script>
+	// Hero animation.
+	window.onload = (event) => {
+		const hero = document.querySelector(".hero")!;
+		const options = {threshold: 0.1};
+		let observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) entry.target.classList.add("hero-loaded");
+			});
+		}, options);
+		observer.observe(hero);
+	};
+</script>
 
