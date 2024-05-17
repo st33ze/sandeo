@@ -3,3 +3,6 @@ FOOTER
 
 GENERAL
 - lower images dimension
+
+BUGGS
+- submenu animation doesnt work when hiding after changing viewport width
