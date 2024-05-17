@@ -195,7 +195,7 @@ import Hamburger from "./Hamburger.astro";
   // Submenu expand.
   const navLink = document.querySelector(".has-submenu > a")!;
   const navLinkIcon = navLink.querySelector(".material-symbols-rounded")!;
-  const submenu = navLink.nextSibling! as HTMLElement;
+  const submenu = document.querySelector(".submenu")! as HTMLElement;
   navLink.addEventListener("click", (e) => {
     if (window.innerWidth < 780) {
       e.preventDefault();
