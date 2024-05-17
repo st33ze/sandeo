@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import OfferCard from '../components/OfferCard.astro';
 import { Image } from 'astro:assets';
+import CldImage from '../components/CldImage.astro';
 import heroBg from "../assets/hero-background.jpg";
 import { getCollection } from 'astro:content';
 
@@ -17,7 +18,8 @@ const offers = await getCollection('offer');
 				<a href="#offer"><button>oferta</button></a>
 			</div>
 			<div class="hero-bg" role="presentation">
-				<Image src={heroBg} alt="" width="500"/>
+				<!-- <Image src={heroBg} alt="" width="500"/> -->
+				<CldImage public_id='sandeo/hero-background' alt='' width={500} height={500}/>
 			</div>
 		</div>
 	</section>
@@ -93,6 +95,7 @@ const offers = await getCollection('offer');
 	}
 	.hero-bg img {
 		width: 100%;
+		max-height: 400px;
 		object-fit: cover;
 	}
 	.more-about {
@@ -193,6 +196,7 @@ const offers = await getCollection('offer');
 		}
 		.hero-bg img {
 			height: 100%;
+			max-height: none;
 			border-radius: 8px;
 		}
 		.hero-bg::after {

@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@cloudinary/url-gen": "^1.19.0",
     "@fontsource-variable/material-symbols-rounded": "^5.0.11",
     "@fontsource-variable/raleway": "^5.0.9",
     "astro": "^3.0.7",
