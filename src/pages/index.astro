@@ -1,9 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import OfferCard from '../components/OfferCard.astro';
-import { Image } from 'astro:assets';
 import CldImage from '../components/CldImage.astro';
-import heroBg from "../assets/hero-background.jpg";
 import { getCollection } from 'astro:content';
 
 const offers = await getCollection('offer');
@@ -18,7 +16,6 @@ const offers = await getCollection('offer');
 				<a href="#offer"><button>oferta</button></a>
 			</div>
 			<div class="hero-bg" role="presentation">
-				<!-- <Image src={heroBg} alt="" width="500"/> -->
 				<CldImage public_id='sandeo/hero-background' alt='' width={500} height={500}/>
 			</div>
 		</div>

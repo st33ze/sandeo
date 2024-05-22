@@ -1,7 +1,7 @@
 ---
 title: Kadry i płace
 icon: groups
-headerBg: ./kadry.jpg
+cldID: kadry
 recap:
 - Kompleksowa obsługa dokumentacji kadrowo - płacowej
 - Sporządzanie umów cywilno - prawnych, kontraktów menadżerskich i innych

@@ -1,7 +1,7 @@
 ---
 title: Rejestracja firmy i postępowanie likwidacyjne
 icon: edit_square
-headerBg: ./rejestracja-firmy.jpg
+cldID: rejestracja-firmy
 recap:
 - Rejestracja firmy i wybór optymalnej formy prawnej
 - Doradztwo w przygotowaniu dokumentów

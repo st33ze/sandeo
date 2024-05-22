@@ -1,7 +1,7 @@
 ---
 title: Doradztwo podatkowe i gospodarcze
 icon: chat
-headerBg: ./doradztwo.jpg
+cldID: doradztwo
 recap:
 - Szczegółowa analiza skutków podatkowych i realizacji zdarzeń gospodarczych
 - Identyfikacja ryzyka podatkowego i związanego z nim zagrożenia

@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import CldImage from '../../components/CldImage.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -18,7 +18,7 @@ const { Content } = await entry.render();
     <div class="offer-header">
       <h1>{entry.data.title}</h1>
       <div class="offer-header--bg">
-        <Image src={entry.data.headerBg} alt="" width="1000"/>
+        <CldImage public_id=`sandeo/offer/${entry.data.cldID}` alt='' width={500} height={250}/>
       </div>
     </div>
     <div class="content"><Content/></div>
@@ -59,7 +59,7 @@ const { Content } = await entry.render();
   }
   .offer-header--bg img {
     height: 100%;
-    /* width: 100%; */
+    width: 100%;
     object-fit: cover;
   }
   .content {

@@ -1,7 +1,7 @@
 ---
 title: Outsourcing
 icon: hub
-headerBg: ./outsourcing.jpg
+cldID: outsourcing
 recap:
 - Przejęcie operacji finansowych, księgowości, raportowania
 - Reprezentacja klientów przed bankami i instytucjami finansowymi

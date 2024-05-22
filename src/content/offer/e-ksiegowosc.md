@@ -1,7 +1,7 @@
 ---
 title: E-księgowość
 icon: laptop_chromebook
-headerBg: ./e-ksiegowosc.jpg
+cldID: e-ksiegowosc
 recap:
 - Najwyższe standardy obsługi poprzez digitalizację i automatyzację
 - Katalogowanie, archiwizacja i wyszukiwanie dokumentów w formie cyfrowej

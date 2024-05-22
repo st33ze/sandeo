@@ -1,8 +1,3 @@
-FOOTER
-- add map?
-
-GENERAL
-- lower images dimension
-
-BUGGS
+BUGS
 - submenu animation doesnt work when hiding after changing viewport width
+- submenu on tablets not working as intended 
