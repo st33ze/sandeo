@@ -8,11 +8,7 @@ recap:
 - Poszukiwanie optymalnych, bezpiecznych i legalnych rozwiązań podatkowych dla firm i osób prywatnych.
 ---
 Kancelaria SANDEO proponuje swoim klientom zarówno bieżące doradztwo podatkowe jak i
-kompleksowe usługi obejmujące zarządzanie ryzykiem podatkowym oraz optymalizacje podatkową.
-Mamy świadomość, iż szczegółowa analiza przewidywanych skutków podatkowych realizacji
-określonych zdarzeń gospodarczych pozwala na identyﬁkację ryzyka podatkowego i innych związanych
-z nim zagrożeń. Naszym celem jest efektywne poszukiwanie optymalnych, bezpiecznych i legalnych
-rozwiązań podatkowych zarówno dla ﬁrm jak i osób prywatnych.  
+kompleksowe usługi obejmujące zarządzanie ryzykiem podatkowym oraz optymalizacje podatkową. Mamy świadomość, iż szczegółowa analiza przewidywanych skutków podatkowych realizacji określonych zdarzeń gospodarczych pozwala na identyfikację ryzyka podatkowego i innych związanych z nim zagrożeń. Naszym celem jest efektywne poszukiwanie optymalnych, bezpiecznych i legalnych rozwiązań podatkowych zarówno dla firm jak i osób prywatnych.  
 Oferujemy wsparcie w zakresie:
 
 - Bieżącego doradztwa oraz pomoc prawno - podatkowa w ramach podatku PIT, CIT i VAT
