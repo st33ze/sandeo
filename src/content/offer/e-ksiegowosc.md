@@ -1,6 +1,6 @@
 ---
 title: E-księgowość
-icon: laptop_chromebook
+icon: laptop
 cldID: e-ksiegowosc
 recap:
 - Najwyższe standardy obsługi poprzez digitalizację i automatyzację

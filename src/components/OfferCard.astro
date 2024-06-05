@@ -3,7 +3,9 @@ const {data, url } = Astro.props;
 ---
 
 <a href={url} class="card">
-  <span aria-hidden="true" class="material-symbols-rounded">{data.icon}</span>
+  <span aria-hidden="true">
+    <svg class="icon"><use xlink:href={`#${data.icon}`}></use></svg>
+  </span>
   <h3>{data.title}</h3>
   <ul>
     {data.recap.map((item: string) => (
@@ -15,7 +17,7 @@ const {data, url } = Astro.props;
 <style>
   .card {
     display: grid;
-    grid-template-columns: min-content;
+    grid-template-columns: max-content;
     grid-template-rows: min-content;
     grid-template-areas: 
     "icon title"
@@ -34,7 +36,10 @@ const {data, url } = Astro.props;
   .card span {
     grid-area: icon;
     padding-right: 0.5rem;
-    font-size: 48px;
+  }
+  .card .icon {
+    width: 48px;
+    height: 48px;
   }
   .card ul {
     padding-left: 20px;

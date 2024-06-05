@@ -8,7 +8,7 @@
       <ul>
         <li>
           <a class="contact-item" href="tel:+48691324334">
-            <span aria-hidden="true" class="material-symbols-rounded">smartphone</span>
+            <span aria-hidden="true"><svg class="icon"><use xlink:href="#smartphone"></use></svg></span>
             <p>
               <span>Telefon</span>
               <span>+48 691 324 334</span>
@@ -17,7 +17,7 @@
         </li>
         <li>
           <a class="contact-item" href="mailto:biuro@sandeo.pl">
-            <span aria-hidden="true" class="material-symbols-rounded">mail</span>
+            <span aria-hidden="true"><svg class="icon"><use xlink:href="#mail"></use></svg></span>
             <p>
               <span>Adres email</span>
               <span>biuro@sandeo.pl</span>
@@ -25,7 +25,7 @@
           </a>
         </li>
         <li class="contact-item">
-            <span aria-hidden="true" class="material-symbols-rounded">schedule</span>
+            <span aria-hidden="true"><svg class="icon"><use xlink:href="#schedule"></use></svg></span>
             <p>
               <span>Godziny otwarcia biura</span>
               <span>Poniedziałek - piątek, godz. 8.00-16.00</span>
@@ -33,7 +33,7 @@
         </li>
         <li>
           <a class="contact-item" href="https://maps.app.goo.gl/3P2wtVcw2LLvZQk78">
-            <span aria-hidden="true" class="material-symbols-rounded">location_on</span>
+            <span aria-hidden="true"><svg class="icon"><use xlink:href="#location"></use></svg></span>
             <p>
               <span>Adres biura</span>
               <span>Poznań 61-701, ul. Fredry 7, 6-7</span></p>
@@ -73,7 +73,11 @@
     color: inherit;
   }
   .contact-item > span {
-    font-size: 32px;
+    min-width: 32px;
+  }
+  .contact-item .icon {
+    width: 32px;
+    height: 32px;
   }
   .contact-item p {
     display: flex;
