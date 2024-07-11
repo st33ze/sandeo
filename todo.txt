@@ -1,3 +1,0 @@
-BUGS
-- submenu animation doesnt work when hiding after changing viewport width
-- submenu on tablets not working as intended 
